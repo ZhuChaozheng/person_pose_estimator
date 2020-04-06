@@ -26,4 +26,4 @@ The low power rules is to close as much devices on board as possible. We latched
 
 as the figure below,the average power consumption(The blue mark) is 3.43mW and the peak power consumption(The red mark) is 37.57mW(mainly cost by Zigbee module transmission).
 
-![QQ图片20200401133210](C:\Users\FengCheng\Desktop\功耗分析图片\QQ图片20200401133210.png)
+![power_result_raw](https://github.com/LiFengcheng01/fengcheng.github.io/blob/master/power_result_raw.png)
