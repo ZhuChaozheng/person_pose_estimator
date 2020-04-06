@@ -14,9 +14,9 @@ After the download,test the data with Zigbee coordinate connected to the PC by U
 
 We use the calibrated accel value and assume the person is at a constant velocity. In this way, we can easily calculate the gravity vector direction from the measured accel vector by the trigonometric functions. Obviously the gravity vector can be easily measured when the person is at a constant velocity. Then we can calculate the direction of  the gravity. We depose the gravity to each plane to calculate  the angle deflection on each plane. Finally the rotation angle of object itself is reverse to the gravity vector rotation from the initial status. There is equation as below:
 
-![](C:\Users\FengCheng\Desktop\1706010213-计算机2班-黎冯成\clip_image002.gif)
+![](https://github.com/LiFengcheng01/fengcheng.github.io/blob/master/clip_image002.gif)
 
-​																				![clip_image004](C:\Users\FengCheng\Desktop\1706010213-计算机2班-黎冯成\clip_image004.gif)
+​																				![clip_image004](https://github.com/LiFengcheng01/fengcheng.github.io/blob/master/clip_image004.gif)
 
 The low power rules is to close as much devices on board as possible. We latched Zigbee module to idle module with a absolutely external resistor. Only when we need a transmission, we pull it up with MCU and send the data. The internal RTC of MCU is also used to awake MCU itself after MCU sleep positively to cut the MCU power consumption.  
 
