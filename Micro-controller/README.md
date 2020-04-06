@@ -14,9 +14,9 @@ After the download,test the data with Zigbee coordinate connected to the PC by U
 
 We use the calibrated accel value and assume the person is at a constant velocity. In this way, we can easily calculate the gravity vector direction from the measured accel vector by the trigonometric functions. Obviously the gravity vector can be easily measured when the person is at a constant velocity. Then we can calculate the direction of  the gravity. We depose the gravity to each plane to calculate  the angle deflection on each plane. Finally the rotation angle of object itself is reverse to the gravity vector rotation from the initial status. There is equation as below:
 
-![](https://github.com/LiFengcheng01/fengcheng.github.io/blob/master/clip_image002.gif)
+![](https://github.com/LiFengcheng01/fengcheng.github.io/raw/master/clip_image002.gif)
 
-​																				![clip_image004](https://github.com/LiFengcheng01/fengcheng.github.io/blob/master/clip_image004.gif)
+​																				![clip_image004](https://github.com/LiFengcheng01/fengcheng.github.io/raw/master/clip_image004.gif)
 
 The low power rules is to close as much devices on board as possible. We latched Zigbee module to idle module with a absolutely external resistor. Only when we need a transmission, we pull it up with MCU and send the data. The internal RTC of MCU is also used to awake MCU itself after MCU sleep positively to cut the MCU power consumption.  
 
@@ -26,4 +26,4 @@ The low power rules is to close as much devices on board as possible. We latched
 
 as the figure below,the average power consumption(The blue mark) is 3.43mW and the peak power consumption(The red mark) is 37.57mW(mainly cost by Zigbee module transmission).
 
-![power_result_raw](https://github.com/LiFengcheng01/fengcheng.github.io/blob/master/power_result_raw.png)
+![power_result_raw](https://github.com/LiFengcheng01/fengcheng.github.io/raw/master/power_result_raw.png)
