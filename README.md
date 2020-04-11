@@ -1,8 +1,6 @@
 # person_pose_estimator
 
-This project is used as a helper for hospital to know the status of each patient. It can detect patient's pose and positioning in real-time, because we place many known zigbee labels in each rooms and equip with a sensor for every patient. As the abnormal circumstance occurs, the nurse can find those changes from the monitor screen system. For web, we use flask as our development framework, and zigbee network is used in pi instead.
-
-Also, in order to test conveniently, we have studied two versions of hardware, [bluetooth](README_Bluetooth.md) and [Zigbee](README_Zigbee.md). One is to demonstrate portably with a single IMU sensor , the other is to construct a cluster with many IMU sensors, as you know, zigbee is a special network to networking easily.
+This project is used as a helper for hospital to know the status of each patient. It can detect patient's pose in real-time, because we place many known zigbee labels in each rooms and equip with a sensor for every patient. As the abnormal circumstance occurs, the nurse can find those changes from the monitor screen system. For web, we use flask as our development framework, and zigbee network is used in pi instead.
 
 Now, Let's start to introduce the file structure of our project. Generally, our project is divided into three parts, with micro-controller(sensors, receivers and et. al.), Gateway(pi), and Server(web server).
 
