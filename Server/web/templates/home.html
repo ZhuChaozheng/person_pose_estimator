@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="/static/js/jquery-2.0.3.js"></script>
+</head>
+<body>
+
+<p>core_node_name  <pre id = "recv0"></pre>
+<p>node <pre id = "recv1"></pre>
+<p>status  <pre id = "recv2"></pre>
+
+
+<script>
+          str = "";
+    function check(){
+        $.ajax({
+        type: 'GET',
+        url: '/api/',
+        success:function (res) {
+          console.log(res.data)
+          str = "<p>" + res.data["core_node_name"] + "</p>";
+            $('#recv0').html(str);
+            str = "<p>" + res.data["node"] + "</p>";
+              $('#recv1').html(str);
+              str = "<p>" + res.data["status"] + "</p>";
+                $('#recv2').html(str);
+        }
+    })
+    }
+    setInterval(check, 1000);
+</script>
+
+</body>
+</html>

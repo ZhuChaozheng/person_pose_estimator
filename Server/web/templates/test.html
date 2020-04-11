@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            div{
+                border: 1px solid #ff0000;
+                height:100px;
+                width:200px;
+                margin:10px 10px;
+                padding:10px 10px;
+                }
+
+            #div_1{
+                background-color:#ff0000;
+            }
+            #div_2{
+                background-color:#ffff00;
+            }
+            #div_3{
+                background-color:#00ff00;
+            }
+            #div_4{
+                background-color:#ff00ff;
+            }
+        </style>
+
+        <script>
+            /*
+                添加内容到div中
+            */
+
+            function adddemo(){
+            //获取第一个div节点对象
+            var divNode1 = document.getElementById("div_1");
+            //alert(divNode1.nodeName);
+            //创建一个文本节点
+            var textNode = document.createTextNode("div区域");
+            //alert(textNode.nodeName);
+            //将文本节点添加到div中
+            divNode1.appendChild(textNode);
+
+            //添加一个超链接
+            //创建一个超链接对象
+            var aNode = document.createElement("a");
+            //链接地址
+            aNode.href = "http://www.baidu.com";
+            //链接内容
+            aNode.innerText = "百度";
+
+            //把节点对象添加到div中
+            divNode1.appendChild(aNode);
+            }
+
+            /*
+            删除div节点中内容
+            */
+            function deleteNode(){
+                //获取当前节点对象
+                var divNode2 = document.getElementById("div_2");
+                //获取文本节点
+                var textNode = divNode2.childNodes[0];
+                //删除文本节点
+                divNode2.removeChild(textNode);
+            }
+
+            /*
+            删除节点
+            */
+            function deleteNode2() {
+
+                /*
+                //第一种
+                //获取div节点对象
+                var divNode2 = document.getElementById("div_2");
+                //获取父节点
+                var parentNode = divNode2.parentNode;
+                //alert(parentNode.nodeName);
+                parentNode.removeChild(divNode2);
+                */
+
+                //第二种
+                //节点自己删除自己
+                //获取节点对象
+                var divNode2 = document.getElementById("div_2");
+                //删除节点,参数为true时，连同子节点也一起上删除，此方法在IE中有效
+                divNode2.removeNode(true);
+
+            }
+
+            /*
+            替换节点，用来替换的div对象不存在了，用div1替换你div3
+            */
+            function update(){
+                //获取第一个div节点对象
+                var divNode1 = document.getElementById("div_1");
+                //获取另一个div节点对象
+                var divNode3 = document.getElementById("div_3");
+                //替换节点,IE有效
+                divNode3.replaceNode(divNode1);
+            }
+
+            /*
+                克隆节点，原节点存在，用div3来替换div4
+            */
+            function clone(){
+                //获取div3的节点对象
+                var div3Node = document.getElementById("div_3");
+                //获取div4节点对象
+                var div4Node = document.getElementById("div_4");
+
+                //复制div3,参数true复制时连同子节点也一起复制
+                var div3Node2 = div3Node.cloneNode(true);
+
+                //替换
+                div4Node.replaceNode(div3Node2);
+
+            }
+
+
+
+        </script>
+
+    </head>
+
+    <body>
+        <div id = "div_1">
+
+        </div>
+
+        <div id = "div_2">
+            div区域2
+        </div>
+
+        <div id = "div_3">
+            div区域3
+        </div>
+
+        <div id = "div_4">
+            div区域4
+        </div>
+
+        <hr/>
+
+        <input type="button" value="添加内容" onclick="adddemo()" />
+        <input type="button" value="删除节点内容" onclick="deleteNode()" />
+        <input type="button" value="删除节点" onclick="deleteNode2()" />
+        <input type="button" value="替换节点" onclick="update()" />
+        <input type="button" value="克隆节点" onclick="clone()" />
+
+
+    </body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="/static/js/jquery-2.0.3.js"></script>
+</head>
+  <head>
+
+
+  </head>
+<style>
+.ts{
+  /*border:3px solid red;*/
+  width:80%;
+  height:300px;
+  margin:30px auto;
+}
+
+p{
+margin-left:30px;
+  padding:30px 20px;
+  border:3px solid red;
+  font-size:20px;
+  display:inline;
+}
+
+</style>
+    <body>
+
+
+
+      <div class="ts" id="people_st">
+        <p id="ad">状态:正常</p>
+      </div>
+
+      <button id="lo" onclick="myFunction()()">增加</button>
+      
+      
+
+
+      <script src="jquery-2.0.3.js">
+      </script>
+      <script>
+        /*
+        function add() {
+            var ipt1 = document.getElementById("test1").value;
+            console.log(ipt1);
+            var ipt2 = document.getElementById("test2").value;
+            console.log(ipt2);
+            var para=document.createElement("p")
+
+            var node2=document.createTextNode(ipt2);
+            para.appendChild(node2);
+            var node=document.createTextNode("状态：正常");
+            para.appendChild(node);
+        
+            
+            var element=document.getElementById("people_st");
+            element.appendChild(para);
+              }//增加*/
+
+        function myFunction() {
+  		var txt;
+  		var number = prompt("请输入编号：", "123456");
+                var person = prompt("请输入姓名：", "");
+  		
+                if(person==null){person="";}
+              var para=document.createElement("p")
+            var node2=document.createTextNode(person);
+            para.appendChild(node2);
+            var node=document.createTextNode("状态：正常");
+            para.appendChild(node);
+            var element=document.getElementById("people_st");
+            element.appendChild(para);
+     }   
+
+
+          txt="";
+          str = "";
+    function check(){
+        $.ajax({
+        type: 'GET',
+        url: '/api/',
+        success:function (res) {
+          console.log(res.data)
+          
+              str =  res.data["status"];
+              if(str=="1"){
+              	alert("1号状态异常！");
+              	txt="状态：异常"
+              	document.getElementById("ad").innerHTML = txt;
+                
+		}
+
+              if(str=="0"){
+              txt="状态：正常"
+              	document.getElementById("ad").innerHTML = txt;
+            }
+                
+        }
+    })
+    }
+    setInterval(check, 1000);
+</script>
+    
+      </script>
+    </body>
+</html>

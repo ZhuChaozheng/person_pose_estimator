@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>person_pose_estimator</title>
+    <script type="text/javascript">
+            // $('#Datetime').datepicker({
+            //     language: 'zh-CN'
+            // });
+            //
+            // $(document).ready(function () {
+            //     App.init(); //Initialise plugins and elements
+            // });
+            //
+            // $("#select_k1").change(function () {
+            //     var  val = document.getElementById("select_k1").value;
+            //     if (val != "") {
+            //         var data = ["2016年10月07日", "2016年10月05日", "2016年10月08日"];
+            //         var rnd = Math.floor(Math.random() * 3);
+            //         document.getElementById("Datetime").placeholder = data[rnd];
+            //     } else {
+            //         document.getElementById("Datetime").placeholder = "";
+            //     }
+            // });
+
+            //以下是获取原有div的内容再添加到动态生成的div中
+            var divs = 0,number = 0;//divs是创建各个控件时赋值变量ID所用，number是计数用
+            var addDiv = function () {
+                // if (number == 5) return;//最多添加5个div
+
+                var oDiv = document.createElement("div");
+                document.getElementById("parent").appendChild(oDiv);
+                oDiv.id = "div_" + divs;
+                oDiv.className = "col-sm-4";
+                // oDiv.style.width = "100%";
+                // oDiv.style.height = "auto";
+                // oDiv.style.marginTop = "30px";
+                var _div = document.getElementById("father").innerHTML;
+                console.log(document.getElementById("father"));
+                // document.getElementById(oDiv.id).innerHTML = _div;
+                var list = document.getElementById(oDiv.id);
+                document.getElementById(oDiv.id).innerHTML = _div;
+                
+                console.log(del);
+                // //添加提交、放弃button
+                // var commit = document.createElement("input");
+                // commit.type = "button";
+                // commit.value = "提交";
+                // commit.id = "com_" + divs;
+                // commit.className = "btn btn-success";
+                // commit.style.marginTop = "10px";
+                // commit.style.marginLeft = "220px";
+                // oDiv.appendChild(commit);
+                // var dele = document.createElement("input");
+                // dele.type = "button";
+                // dele.value = "放弃";
+                // dele.id = "dele_" + divs;
+                // dele.className = "btn btn-grey";
+                // dele.style.marginTop = "10px";
+                // dele.style.marginLeft = "50px";
+                // oDiv.appendChild(dele);
+                // //为dele添加事件的监听
+                // dele.onclick = remove;
+
+                divs++;
+                number++;
+            }
+            function remove() {
+
+                // removeNode(true);
+                number--;
+            }
+        </script>
+
+  </head>
+  <body>
+    <h1 class="text-center">Baidu</h1>
+    <div class="container">
+
+      <div id="parent" class="row">
+        <div id="father" class="col-sm-4">
+          <div class="card border-success mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+              Z.Chao
+              <button id="close" type="button" class="close" onclick="remove()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="card-body text-success">
+              <h1 class="card-title text-center">Normal</h1>
+              <p class="card-text invisible">Some quick example text to build on the card title and make up the.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="last" class="col-sm-4">
+          <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <!-- Image trigger modal -->
+            <!-- <img class="card-img-top" src="../static/img/initial.png" alt="Card image cap" data-toggle="modal" data-target="#exampleModalCenter"> -->
+            <img class="card-img-top" src="../static/img/initial.png" onclick="addDiv()">
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">add new device</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">name</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Chaozheng Zhu" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">device ID</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="N0040" aria-describedby="basic-addon1">
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="addDiv()">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
